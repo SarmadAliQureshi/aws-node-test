@@ -1,13 +1,25 @@
 const express = require('express')
 require("dotenv").config();
 var {Pool} = require('pg');
-const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'postgres',
-    password: 'postgres',
-    port: 5432,
-  })
+const { Client } = require('pg')
+// const pool = new Pool({
+//     user: 'postgres',
+//     host: 'localhost',
+//     database: 'postgres',
+//     password: 'postgres',
+//     port: 5432,
+//   })
+const connectionString = 'postgresql://postgres:postgres@localhost:5432/postgres'
+// set DATABASE_URL=postgres://$('postgresql://postgres:postgres@localhost:5432/postgres')
+const pool = new Client({
+connectionString: connectionString
+})
+
+pool.connect()
+//   var conString = "postgres://postgres:postgres@localhost:5432/postgres";
+
+//   var pool = new Pool(conString);
+//   pool.connect();
 
 app = express()
 
