@@ -3,8 +3,10 @@ require("dotenv").config();
 
 app = express()
 
+app.set('view engine', 'ejs')
+
 app.get('/', function(req, res, next) {
-    res.send('Welcome')
+    res.render('index')
 })
 
 app.listen(process.env.PORT, function() {
