@@ -9,7 +9,7 @@ const { Client } = require('pg')
 //     password: 'postgres',
 //     port: 5432,
 //   })
-const connectionString = 'postgresql://postgres:postgres@localhost:5432/postgres'
+const connectionString = 'postgresql://postgres:postgres@database-1.c6am0oww5fuv.ap-northeast-1.rds.amazonaws.com:5432/postgres'
 // set DATABASE_URL=postgres://$('postgresql://postgres:postgres@localhost:5432/postgres')
 const pool = new Client({
 connectionString: connectionString
@@ -45,3 +45,5 @@ app.listen(process.env.PORT, function() {
 
 // heroku config:set DATABASE_URL=postgresql://postgres:postgres@database-1.c6am0oww5fuv.ap-northeast-1.rds.amazonaws.com:5432/postgres --app nodeherokutest1
 // heroku config:set KEY=VALUE --app <project-name>
+
+// psql postgres -h database-1.c6am0oww5fuv.ap-northeast-1.rds.amazonaws.com -p 5432 -U postgres
