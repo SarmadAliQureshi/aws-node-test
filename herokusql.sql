@@ -1,0 +1,1 @@
+create table first_table(id numeric, name varchar(255))
