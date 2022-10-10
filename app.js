@@ -41,9 +41,16 @@ app.listen(process.env.PORT, function() {
 
 // pg_dump.exe -h "localhost" -U "postgres" -p 5432 -d "postgres" -t "public.ajk_forest_divisions" | psql.exe -h "database-1.c6am0oww5fuv.ap-northeast-1.rds.amazonaws.com" -p 5432 -U "postgres" -d "postgres" -W
 // DATABASE_URL
-// postgresql://postgres:postgres@database-1.c6am0oww5fuv.ap-northeast-1.rds.amazonaws.com:5432/postgres
+// postgresql://postgres:postgres@database-1.c6am0oww5fuv.ap-northeast-1.rds.amazonaws.com:5432/postgres?sslrootcert=rds-combined-ca-bundle.pem&sslmode=require
 
 // heroku config:set DATABASE_URL=postgresql://postgres:postgres@database-1.c6am0oww5fuv.ap-northeast-1.rds.amazonaws.com:5432/postgres --app nodeherokutest1
 // heroku config:set KEY=VALUE --app <project-name>
 
 // psql postgres -h database-1.c6am0oww5fuv.ap-northeast-1.rds.amazonaws.com -p 5432 -U postgres
+
+// postgresql://username:password@awsrdshost:5432/dbname?sslrootcert=rds-combined-ca-bundle.pem&sslmode=require
+
+// psql postgres -h database-1.c6am0oww5fuv.ap-northeast-1.rds.amazonaws.com -p 5432 -U postgres
+
+// psql -h database-1.c6am0oww5fuv.ap-northeast-1.rds.amazonaws.com -d postgres -U postgres -W
+
